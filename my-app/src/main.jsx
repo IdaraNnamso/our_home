@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
-// 🟢 Make sure these filenames match the actual files in src/pages/
 import Home from './pages/Home.jsx';
 import Model from './pages/Model.jsx';
+import Technology from './pages/Technology.jsx';
 
 import './css/transitions.css';
 
@@ -33,7 +33,7 @@ function AppRoutes() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/model" element={<Model />} />
-            {/* Add more routes here if needed */}
+            <Route path="/technology" element={<Technology />} />
           </Routes>
         </div>
       )}

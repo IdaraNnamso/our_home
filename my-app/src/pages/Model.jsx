@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/model.css"; 
+import "../css/model.css";
 import Nav from "../components/nav";
 
 const carouselImages = [
@@ -59,10 +59,20 @@ export default function Model() {
               src={img.src}
               alt={`Slide ${index + 1}`}
               className="carousel-image"
+              loading="lazy"
             />
             <div className="carousel-caption">{img.title}</div>
           </div>
         ))}
+        <div className="carousel-indicators">
+          {carouselImages.map((_, i) => (
+            <span
+              key={i}
+              className={`dot ${i === activeIndex ? "active" : ""}`}
+              onClick={() => setActiveIndex(i)}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="model-container">
@@ -72,6 +82,7 @@ export default function Model() {
           <div className="info">
             <h3>BMW i8</h3>
             <p>Plug-in hybrid sports car with futuristic design and performance.</p>
+            <button className="view-more-btn">Learn More</button>
           </div>
         </div>
 
@@ -81,11 +92,14 @@ export default function Model() {
           <div className="info">
             <h3>BMW X6</h3>
             <p>Luxury crossover with coupe styling and dynamic driving feel.</p>
+            <button className="view-more-btn">Learn More</button>
           </div>
         </div>
-
-        {/* Add more model cards here as needed */}
+     
       </div>
+      <footer className="tech-footer">
+                &copy; {new Date().getFullYear()} BMW Innovation Hub — All Rights Reserved.
+            </footer>
     </div>
   );
 }

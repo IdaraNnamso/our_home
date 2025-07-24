@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/model.css"; 
-import Topnav from "../components/topnav";
+import Nav from "../components/nav";
 
 const carouselImages = [
   {
@@ -47,7 +47,7 @@ export default function Model() {
 
   return (
     <div>
-      <Topnav />
+      <Nav />
 
       <div className="carousel">
         {carouselImages.map((img, index) => (

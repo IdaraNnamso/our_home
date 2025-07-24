@@ -14,7 +14,7 @@ export default function Topnav() {
           <li><Link to="/technology">Technology</Link></li>
           <li><Link to="/contact">Contact</Link></li>
           <li><Link to="/about">About</Link></li>
-          <li><Link to="/more">More</Link></li>
+          {/* <li><Link to="/more">More</Link></li> */}
         </ul>
       </nav>
     </div>

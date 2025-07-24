@@ -38,65 +38,6 @@ html, body {
     background: #434190;
   }
 
-  .navbar {
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 30px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    font-family: 'Orbitron', sans-serif;
-    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
-    margin-left:-49px;
-  }
-  
-  .navbar ul {
-    display: flex;
-    gap: 50px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar li {
-    position: relative;
-  }
-  
-  .navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 1px;
-    padding: 8px 5px;
-    transition: color 0.3s ease;
-    position: relative;
-  }
-  
-  .navbar a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 0%;
-    background-color: #fff;
-    transition: width 0.3s ease;
-  }
-  
-  .navbar a:hover {
-    color: #fff;
-  }
-  
-  .navbar a:hover::after {
-    width: 100%;
-  }
-  
-  .navbar a:active {
-    color: #ccc;
-  }
 
   .huddle-header{
     font-size: 150px;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/home.css"; 
 import { Link } from "react-router-dom";
+import Topnav from "../components/topnav";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -20,16 +21,7 @@ export default function Home() {
 
   return (
     <div>
-      <nav className="navbar">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/model">Models</Link></li>
-          <li><Link to="/technology">Technology</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/more">More</Link></li>
-        </ul>
-      </nav>
+      <Topnav />
       <div className="huddle-container">
         <video autoPlay loop muted playsInline className="background-video">
           <source src="https://motionbgs.com/media/5411/bmw-m5-in-dark.960x540.mp4" type="video/mp4" />

@@ -19,9 +19,6 @@ html, body {
   object-fit: cover;
   z-index: -10;
   pointer-events: none;
-  margin: 0;
-  padding: 0;
-  border: none;
 }
 
 .page-loader {
@@ -99,32 +96,199 @@ html, body {
   color: #000;
 }
 
-.about-section {
-  background: #0a0a0a;
-  color: #eee;
-  padding: 100px 20px 80px;
+.split-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 80px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.split-video {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.split-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+}
+
+.split-text {
+  flex: 1 1 300px;
+  color: #fff;
+  max-width: 500px;
+}
+
+.split-text h2 {
+  font-size: 2.5rem;
+  color: #00aaff;
+  margin-bottom: 16px;
+}
+
+.split-text p {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.models-section {
+  padding: 60px 40px;
+  background: #000;
   text-align: center;
-  transform: translateY(30px);
-  animation: fadeInUp 1.2s ease forwards;
+}
+
+.models-header h2 {
+  font-size: 2.8rem;
+  margin: 0;
+  color: #00aaff;
+  font-weight: 600;
+}
+
+.find-your-bmw {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.model-card {
   position: relative;
+  overflow: hidden;
+  background: #000;
+  color: white;
+  border-radius: 12px;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.model-card:hover {
+  transform: translateY(-5px);
+}
+
+.model-card.featured {
+  grid-column: span 2;
+  min-height: 400px;
+  background: #000;
+}
+
+.model-info {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  text-align: left;
+}
+
+.model-card.featured .model-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 30px;
+}
+
+.model-tag {
+  display: inline-block;
+  background: #1c69d4;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.model-description {
+  font-size: 1.1rem;
+  margin-top: 15px;
+  max-width: 80%;
+}
+
+.model-video-bg,
+.model-video-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.model-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 1;
 }
 
-.about-section h2 {
-  font-size: 2.8rem;
+.split-section2 {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 500px;
+  width: 100%;
+}
+
+.split-video2 {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.split-video2 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.split-text2 {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #000;
+}
+
+.split-text2 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
   color: #00aaff;
-  margin-bottom: 1rem;
 }
 
-.about-section p {
-  max-width: 800px;
-  margin: 0 auto 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #ccc;
+.view-more-btn {
+  background: none;
+  border: 1px solid #00aaff;
+  padding: 8px 16px;
+  margin-top: 1rem;
+  color: #00aaff;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
-  .contact-section {
+.view-more-btn:hover {
+  background: #00aaff;
+  color: #000;
+}
+
+.contact-section {
   padding: 80px 20px;
   text-align: center;
   background: rgba(0, 0, 0, 0.2);
@@ -242,330 +406,30 @@ html, body {
   padding-top: 20px;
 }
 
-.split-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  padding: 80px 20px;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-}
 
-.split-video {
-  flex: 1 1 400px;
-  max-width: 600px;
-}
-
-.split-video video {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
-}
-
-.split-text {
-  flex: 1 1 300px;
-  color: #fff;
-  max-width: 500px;
-}
-
-.split-text h2 {
-  font-size: 2.5rem;
-  color: #00aaff;
-  margin-bottom: 16px;
-}
-
-.split-text p {
-  font-size: 1.1rem;
-  color: #ccc;
-  line-height: 1.6;
-}
-
-.model-section {
-  padding: 60px 40px;
-  background: #000;
-  text-align: center;
-}
-
-.models-header h2 {
-  font-size: 2.8rem;
-  margin: 0;
-  color: #00aaff;
-  font-weight: 600;
-}
-
-.find-your-bmw {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 40px;
-}
-
-.models-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.models-card {
-  background: #000;
-  border-radius: 12px;
-  padding: 30px;
-  min-height: 200px;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.model-card:hover {
-  transform: translateY(-5px);
-}
-
-.model-card.featured {
-  grid-column: span 2;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url('https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/freude/speedtop/speedtop-01-stage-hd.mp4') center/cover;
-  color: white;
-  min-height: 300px;
-}
-
-.model-info {
-  text-align: left;
-  z-index: 2;
-}
-
-.model-card h3 {
-  font-size: 1.8rem;
-  margin: 0 0 10px;
-}
-
-.model-tag {
-  display: inline-block;
-  background: #1c69d4;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.featured .model-tag {
-  background: #fff;
-  color: #1c69d4;
-}
-
-.model-description {
-  font-size: 1.1rem;
-  margin-top: 15px;
-  max-width: 80%;
-}
-
-.bmw-intelligence {
-  margin-top: 40px;
-  display: inline-block;
-  border: 2px solid #000;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 600;
-}
-
-.model-video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.model-video-preview {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px 8px 0 0;
-  margin-bottom: 15px;
-}
-
-.model-card {
-  position: relative;
-  overflow: hidden;
-  background: #000;
-  color: white;
-}
-
-.model-card.featured {
-  min-height: 400px;
-}
-
-.model-card:not(.featured) {
-  display: flex;
-  flex-direction: column;
-}
-
-.model-info {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-}
-
-.model-card.featured .model-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  padding: 30px;
-}
-
-.model-card {
-  border-radius: 12px;
-  transition: transform 0.3s;
-}
-
-.model-card:hover {
-  transform: translateY(-5px);
-}
-
-.model-tag {
-  display: inline-block;
-  background: #1c69d4;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-top: 5px;
-}
-
-.split-section2 {
-  display: flex;
-  min-height: 500px;  
-  width: 100%;
-}
-
-.split-video2 {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-}
-
-.split-video2 video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.split-text2 {
-  flex: 1;
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #000; 
-}
-
-.split-text2 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.split-text2 p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #666;
-  max-width: 80%;
-}
-
-.view-more-btn {
-  background: none;
-  border: 1px solid #00aaff;
-  padding: 8px 16px;
-  margin-top: 1rem;
-  color: #00aaff;
-  border-radius: 8px;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
-.view-more-btn:hover {
-  background: #00aaff;
-  color: #000;
-}
-@media (max-width: 768px) {
-  .split-section2 {
-    flex-direction: column;
-  }
-  
-  .split-video2 {
-    height: 300px;
-  }
-  
-  .split-text2 {
-    padding: 30px;
-  }
-  
-  .split-text2 p {
-    max-width: 100%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .split-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .split-text h2 {
-    font-size: 2rem;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 @media screen and (max-width: 768px) {
   .bmw-title {
     font-size: 64px;
   }
-
-  .about-section h2,
-  .contact-section h2 {
-    font-size: 2rem;
+  .split-section, .split-section2 {
+    flex-direction: column;
   }
-
-  .scroll-down-btn {
-    font-size: 0.9rem;
-    padding: 10px 20px;
+  .split-text, .split-text2 {
+    padding: 30px;
+    text-align: center;
   }
-
   .footer-links {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-
   .footer-links div {
     width: 100%;
     margin-bottom: 20px;
+  }
+  .model-card.featured {
+    grid-column: span 1;
   }
 }
 
@@ -573,22 +437,15 @@ html, body {
   .bmw-title {
     font-size: 48px;
   }
-
   .contact-section h2,
   .about-section h2 {
     font-size: 1.8rem;
   }
-
-  .contact-section p,
-  .about-section p {
-    font-size: 1rem;
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
   }
-
-  .contact-form {
-    gap: 16px;
-    padding: 0 10px;
-  }
-
   .contact-form button {
     font-size: 1rem;
     padding: 12px 18px;

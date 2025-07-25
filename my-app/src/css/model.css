@@ -198,6 +198,23 @@ body::before {
   margin-top: 4rem;
 }
 
+.category-heading {
+  font-size: 2rem;
+  color: #00aaff;
+  font-family: 'Orbitron', sans-serif;
+  margin: 3rem 0 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 6px rgba(0, 170, 255, 0.2);
+}
+
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 0 5%;
+}
+
+
 @keyframes fadeInUp {
   to {
     opacity: 1;

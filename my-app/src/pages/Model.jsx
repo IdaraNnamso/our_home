@@ -21,6 +21,42 @@ const carouselImages = [
   },
 ];
 
+const modelCategories = [
+  {
+    category: "Electric",
+    cars: [
+      {
+        name: "BMW i8",
+        image: "https://i.pinimg.com/1200x/6f/f0/a4/6ff0a49488627b6cd8df22229d6e0c29.jpg",
+        description: "Plug-in hybrid sports car with futuristic design and performance.",
+        tag: "Electric",
+      },
+    ],
+  },
+  {
+    category: "Luxury SUV",
+    cars: [
+      {
+        name: "Luxury crossover with coupe styling and dynamic driving feel.",
+        image: "https://wallpapercave.com/wp/wp8850596.jpg",
+        description:"",
+        tag: "Luxury SUV",
+      },
+    ],
+  },
+  {
+    category: "Sports",
+    cars: [
+      {
+        name: "BMW M4",
+        image: "https://cdn.bmwblog.com/wp-content/uploads/2020/09/2021-bmw-m4-coupe-competition-g82-02.jpg",
+        description: "High-performance sports coupe engineered for ultimate thrills.",
+        tag: "Sports",
+      },
+    ],
+  },
+];
+
 export default function Model() {
   const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -76,30 +112,29 @@ export default function Model() {
       </div>
 
       <div className="model-container">
-        <div className="model-card">
-          <span className="tag">Electric</span>
-          <img src="https://i.pinimg.com/1200x/6f/f0/a4/6ff0a49488627b6cd8df22229d6e0c29.jpg" alt="BMW i8" />
-          <div className="info">
-            <h3>BMW i8</h3>
-            <p>Plug-in hybrid sports car with futuristic design and performance.</p>
-            <button className="view-more-btn">Learn More</button>
+        {modelCategories.map((group, idx) => (
+          <div key={idx}>
+            <h2 className="category-heading">{group.category}</h2>
+            <div className="category-cards">
+              {group.cars.map((car, index) => (
+                <div key={index} className="model-card">
+                  <span className="tag">{car.tag}</span>
+                  <img src={car.image} alt={car.name} />
+                  <div className="info">
+                    <h3>{car.name}</h3>
+                    <p>{car.description}</p>
+                    <button className="view-more-btn">Learn More</button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="model-card">
-          <span className="tag">Luxury SUV</span>
-          <img src="https://wallpapercave.com/wp/wp8850596.jpg" alt="BMW X6" />
-          <div className="info">
-            <h3>BMW X6</h3>
-            <p>Luxury crossover with coupe styling and dynamic driving feel.</p>
-            <button className="view-more-btn">Learn More</button>
-          </div>
-        </div>
-     
+        ))}
       </div>
+
       <footer className="tech-footer">
-                &copy; {new Date().getFullYear()} BMW Innovation Hub — All Rights Reserved.
-            </footer>
+        &copy; {new Date().getFullYear()} BMW Innovation Hub — All Rights Reserved.
+      </footer>
     </div>
   );
 }

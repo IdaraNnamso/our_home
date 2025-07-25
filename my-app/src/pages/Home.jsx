@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../css/home.css"; 
 import Topnav from "../components/topnav";
+import { Link } from "react-router-dom";
+import FuzzyText from "../components/fuzzytext";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const hoverIntensity = 0.5;
+  const enableHover = true;
 
   useEffect(() => {
     const timeout = setTimeout(() => setLoading(false), 1000); 
@@ -31,9 +35,16 @@ export default function Home() {
 
       <div className="huddle-container">
         <div className="hero-content">
+          <FuzzyText 
+            baseIntensity={0.2} 
+            hoverIntensity={hoverIntensity} 
+            enableHover={enableHover}
+          >
+            BMW
+          </FuzzyText>
         </div>
       </div>
-      
+
       <div className="split-section">
         <div className="split-video">
           <video autoPlay loop muted playsInline>
@@ -52,49 +63,61 @@ export default function Home() {
         </div>
       </div>
 
-<div className="split-section">
+      <div className="models-section">
+        <div className="models-header">
+          <h2>ALL BMW MODELS</h2>
+          <p className="find-your-bmw">Find your BMW</p>
+        </div>
 
-</div>
+        <div className="models-grid">
+          <Link to="/model" className="model-card featured">
+            <video autoPlay loop muted playsInline className="model-video-bg">
+              <source
+                src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/digital-journey/bmw-intelligence/bi-01-stage-hd.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div className="model-info">
+              <h3>BMW Intelligence</h3>
+              <span className="model-tag">Smart Tech</span>
+              <p className="model-description">
+                Discover cutting-edge technology inside every BMW model.
+              </p>
+            </div>
+          </Link>
 
-<div className="models-section">
-  <div className="models-header">
-    <h2>ALL BMW MODELS</h2>
-    <p className="find-your-bmw">Find your BMW</p>
-  </div>
+          <Link to="/model" className="model-card featured">
+            <video autoPlay loop muted playsInline className="model-video-preview">
+              <source src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/digital-journey/hoj/hoj-01-stage-hd.mp4" type="video/mp4" />
+            </video>
+            <div className="model-info">
+              <h3>Joy of Driving</h3>
+              <span className="model-tag">Performance</span>
+              <p className="model-description">Pure adrenaline, crafted in Germany's finest engineering.</p>
+            </div>
+          </Link>
+        </div>
 
-  <div className="models-grid">
-  <div className="model-card featured">
-      <video autoPlay loop muted playsInline className="model-video-bg">
-        <source src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/digital-journey/bmw-intelligence/bi-01-stage-hd.mp4" type="video/mp4" />
-      </video>
-    </div>
+        <div className="bmw-intelligence">
+          <p>BMW Intelligence</p>
+        </div>
+      </div>
 
-    <div className="model-card">
-      <video autoPlay loop muted playsInline className="model-video-preview">
-        <source src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/digital-journey/hoj/hoj-01-stage-hd.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </div>
+      <div className="split-section2">
+        <div className="split-video2">
+          <video autoPlay loop muted playsInline>
+            <source
+              src="https://www.bmw.com/video/is/content/BMW/bmwcom/bmw_com/category/Automotive%20Life/bmw-explained-logo/exl-01-stage-hd9.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div className="split-text2">
+          <h2>BECOME A BMW EXPERT</h2>
+          <button className="view-more-btn">BMW EXPLAINED</button>
+        </div>
+      </div>
 
-  <div className="bmw-intelligence">
-    <p>BMW Intelligence</p>
-  </div>
-</div>
-
-<div className="split-section2">
-  <div className="split-video2">
-    <video autoPlay loop muted playsInline>
-      <source
-        src="https://www.bmw.com/video/is/content/BMW/bmwcom/bmw_com/category/Automotive%20Life/bmw-explained-logo/exl-01-stage-hd9.mp4"
-        type="video/mp4"
-      />
-    </video>
-  </div>
-  <div className="split-text2">
-    <h2>BECOME A BMW EXPERT</h2>
-<button className="view-more-btn">BMW EXPLAINED</button>
-  </div>
-</div>
       <div className="contact-section" id="contact">
         <h2>Contact Us</h2>
         <p>Have questions or want to connect? Reach out below.</p>
@@ -134,7 +157,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 BMW Experience. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} BMW Experience. All rights reserved.</p>
         </div>
       </footer>
     </div>

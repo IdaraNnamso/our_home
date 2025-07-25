@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/model.css";
 import Nav from "../components/nav";
+import { Link } from "react-router-dom";
 
 const carouselImages = [
   {
@@ -23,39 +24,43 @@ const carouselImages = [
 
 const modelCategories = [
   {
+    route: "/electric",
     category: "Electric",
     cars: [
       {
-        name: "BMW i8",
+        name: "Plug-in hybrid sports car with futuristic design and performance.",
         image: "https://i.pinimg.com/1200x/6f/f0/a4/6ff0a49488627b6cd8df22229d6e0c29.jpg",
-        description: "Plug-in hybrid sports car with futuristic design and performance.",
+        description: "",
         tag: "Electric",
       },
     ],
   },
   {
+    route: "/suv",
     category: "Luxury SUV",
     cars: [
       {
         name: "Luxury crossover with coupe styling and dynamic driving feel.",
         image: "https://wallpapercave.com/wp/wp8850596.jpg",
-        description:"",
+        description: "",
         tag: "Luxury SUV",
       },
     ],
   },
   {
+    route: "/sports",
     category: "Sports",
     cars: [
       {
-        name: "BMW M4",
-        image: "https://cdn.bmwblog.com/wp-content/uploads/2020/09/2021-bmw-m4-coupe-competition-g82-02.jpg",
-        description: "High-performance sports coupe engineered for ultimate thrills.",
+        name: "High-performance sports coupe engineered for ultimate thrills.",
+        image: "https://hips.hearstapps.com/hmg-prod/images/2025-bmw-m4-coupe-front-three-quarters-motion-65b935ea5dde6.jpg?crop=0.888xw:0.752xh;0.0881xw,0.0865xh&resize=2048:*",
+        description: "",
         tag: "Sports",
       },
     ],
   },
 ];
+
 
 export default function Model() {
   const [loading, setLoading] = useState(true);
@@ -111,26 +116,31 @@ export default function Model() {
         </div>
       </div>
 
-      <div className="model-container">
-        {modelCategories.map((group, idx) => (
-          <div key={idx}>
-            <h2 className="category-heading">{group.category}</h2>
-            <div className="category-cards">
-              {group.cars.map((car, index) => (
-                <div key={index} className="model-card">
-                  <span className="tag">{car.tag}</span>
-                  <img src={car.image} alt={car.name} />
-                  <div className="info">
-                    <h3>{car.name}</h3>
-                    <p>{car.description}</p>
-                    <button className="view-more-btn">Learn More</button>
-                  </div>
-                </div>
-              ))}
+    
+
+<div className="model-container">
+  {modelCategories.map((group, idx) => (
+    <div key={idx}>
+      <h2 className="category-heading">{group.category}</h2>
+      <div className="category-cards">
+        {group.cars.map((car, index) => (
+          <div key={index} className="model-card">
+            <span className="tag">{car.tag}</span>
+            <img src={car.image} alt={car.name} />
+            <div className="info">
+              <h3>{car.name}</h3>
+              <p>{car.description || "Discover the features and performance."}</p>
+              <Link to={group.route}>
+                <button className="view-more-btn">View</button>
+              </Link>
             </div>
           </div>
         ))}
       </div>
+    </div>
+  ))}
+</div>
+
 
       <footer className="tech-footer">
         &copy; {new Date().getFullYear()} BMW Innovation Hub — All Rights Reserved.

@@ -8,30 +8,39 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const hoverIntensity = 0.5;
   const enableHover = true;
-
   useEffect(() => {
-    const timeout = setTimeout(() => setLoading(false), 1000); 
-    return () => clearTimeout(timeout);
+    // Prevent loader on internal hash scroll
+    const hasHash = window.location.hash;
+  
+    if (!hasHash) {
+      setLoading(true);
+      const timeout = setTimeout(() => setLoading(false), 1000);
+      return () => clearTimeout(timeout);
+    } else {
+      setLoading(false);
+    }
   }, []);
-
-  if (loading) {
-    return (
-      <div className="page-loader">
-        <div className="spinner"></div>
-      </div>
-    );
-  }
+if (loading) {
+  return (
+    <div className="page-loader">
+      <div className="spinner"></div>
+    </div>
+  );
+}  
+  
 
   return (
     <div className="home-wrapper">
       <Topnav />
 
       <video autoPlay loop muted playsInline className="background-video">
-        <source
-          src="https://motionbgs.com/media/5411/bmw-m5-in-dark.960x540.mp4"
-          type="video/mp4"
-        />
-      </video>
+  <source
+    src="https://videos.pexels.com/video-files/30678639/13127448_1920_1080_60fps.mp4"
+    type="video/mp4"
+  />
+  Your browser does not support the video tag.
+</video>
+
 
       <div className="huddle-container">
         <div className="hero-content">
@@ -40,7 +49,7 @@ export default function Home() {
             hoverIntensity={hoverIntensity} 
             enableHover={enableHover}
           >
-            BMW
+            
           </FuzzyText>
         </div>
       </div>
@@ -118,16 +127,39 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="about-section" id="about">
+  <h2>About BMW</h2>
+  <p>
+    At BMW, we are driven by innovation, performance, and a relentless pursuit of excellence. Our legacy spans over a century, crafting luxury vehicles that combine art, engineering, and technology into a unique driving experience.
+  </p>
+  <div className="about-highlights">
+    <div className="highlight-box">
+      <h4>Legacy</h4>
+      <p>Over 100 years of automotive innovation and passion.</p>
+    </div>
+    <div className="highlight-box">
+      <h4>Technology</h4>
+      <p>Integrating AI, iDrive, and sustainable performance.</p>
+    </div>
+    <div className="highlight-box">
+      <h4>Design</h4>
+      <p>Iconic designs that define luxury and sportiness.</p>
+    </div>
+  </div>
+</div>
+
       <div className="contact-section" id="contact">
-        <h2>Contact Us</h2>
-        <p>Have questions or want to connect? Reach out below.</p>
-        <form className="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
+  <h2>Contact Us</h2>
+  <p>Have questions or want to connect? Reach out below.</p>
+  <form className="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+
 
       <footer className="footer">
         <div className="footer-links">

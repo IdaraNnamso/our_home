@@ -5,7 +5,9 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Model from './pages/Model.jsx';
 import Technology from './pages/Technology.jsx';
-
+import Electric from './pages/models/Electric.jsx';
+import Suv from './pages/models/Suv.jsx';
+import Sports from './pages/models/Sports.jsx';
 import './css/transitions.css';
 
 function AppRoutes() {
@@ -34,6 +36,9 @@ function AppRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/model" element={<Model />} />
             <Route path="/technology" element={<Technology />} />
+            <Route path="/electric" element={<Electric />} />
+            <Route path="/suv" element={<Suv />} />
+            <Route path="/sports" element={<Sports />} />
           </Routes>
         </div>
       )}

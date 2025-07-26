@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../../css/navbar.css';
 
 export default function Navbar() {
-    return (
-<nav className="navbar">
-<div className="logo">OURHOME</div>
-<ul className="nav-links">
-  <li><a href="#gallery">Gallery</a></li>
-  <li><a href="#categories">Categories</a></li>
-  <li><a href="#adoption">Adopt</a></li>
-</ul>
-</nav>
-)
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  return (
+    <nav className="navbar">
+      <div className="logo">OURHOME🐾</div>
+
+      <div className="hamburger" onClick={toggleMenu}>
+        ☰
+      </div>
+
+      <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <li><a href="#gallery">Shop now</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#adoption">Adopt</a></li>
+      </ul>
+    </nav>
+  );
 }

@@ -23,8 +23,46 @@
     color: white;
     text-decoration: none;
     font-weight: 500;
+    margin-right: 31px;
   }
   
   .nav-links li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #00bfff;
+    font-weight: bold;
+    transition: color 0.3s;
   }
+ 
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #007BFF;
+      margin-top: 1rem;
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  
+    .nav-links li {
+      padding: 0.5rem 1rem;
+    }
+  
+    .nav-links li a {
+      display: block;
+    }
+  }
+  

@@ -11,7 +11,7 @@ function AppRoutes() {
 
   useEffect(() => {
     setLoading(true);
-    const timeout = setTimeout(() => setLoading(false), 700);
+    const timeout = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timeout);
   }, [location]);
 
@@ -19,11 +19,14 @@ function AppRoutes() {
     <>
       {loading ? (
         <div className="page-loader">
-          <img
-            src=""
-            alt="Loading PETS"
-            className="pets"
-          />
+      <div className="paw-container">
+  <div className="paw paw1"></div>
+  <div className="paw paw2"></div>
+  <div className="paw paw3"></div>
+  <div className="paw paw4"></div>
+
+</div>
+
         </div>
       ) : (
 

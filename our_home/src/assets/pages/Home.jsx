@@ -7,14 +7,12 @@ export default function Home() {
     <div className="home-wrapper">
       <Navbar />
 
-      {/* Hero Section */}
       <header className="hero">
         <h1 className="site-title">OURHOME</h1>
         <p className="tagline">Where Pets Feel at Home</p>
         <a href="#categories" className="cta-button">Explore Categories</a>
       </header>
 
-      {/* Gallery Section */}
       <section id="gallery" className="gallery-section">
         <h2>Our Lovely Pets</h2>
         <div className="gallery">
@@ -37,7 +35,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pet Categories Section */}
       <section id="categories" className="categories-section">
         <h2>Pet Categories</h2>
         <div className="category-cards">
@@ -97,13 +94,10 @@ export default function Home() {
 
       <footer className="footer">
       <div className="footer-content">
-        {/* About */}
-        <div className="footer-section about">
+            <div className="footer-section about">
           <h2>OURHOME</h2>
           <p>Your trusted destination for finding and adopting pets. We connect loving homes with lovable animals.</p>
         </div>
-
-        {/* Quick Links */}
         <div className="footer-section links">
           <h3>Quick Links</h3>
           <ul>
@@ -113,8 +107,6 @@ export default function Home() {
             <li><a href="/">Home</a></li>
           </ul>
         </div>
-
-        {/* Contact Info */}
         <div className="footer-section contact">
           <h3>Contact Us</h3>
           <p>Email: info@ourhomepets.com</p>
@@ -122,7 +114,6 @@ export default function Home() {
           <p>Location: Lagos, Nigeria</p>
         </div>
 
-        {/* Social Media */}
         <div className="footer-section social">
           <h3>Follow Us</h3>
           <div className="social-icons">

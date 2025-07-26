@@ -8,14 +8,14 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">OURHOE🐾</div>
+      <div className="logo">OURHOME🐾</div>
 
       <div className="hamburger" onClick={toggleMenu}>
         ☰
       </div>
 
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        <li><a href="#gallery">Shop now</a></li>
+        <li><a href="/shopnow">Shop now</a></li>
         <li><a href="#categories">Categories</a></li>
         <li><a href="#adoption">Adopt</a></li>
       </ul>

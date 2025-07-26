@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 import Home from './assets/pages/Home.jsx';
+import Shopnow from './assets/pages/Shopnow.jsx';
 
 import './css/transitions.css';
 function AppRoutes() {
@@ -34,6 +35,7 @@ function AppRoutes() {
         <div className="fade-wrapper">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
+            <Route path="/shopnow" element={<Shopnow />} />
           </Routes>
         </div>
       )}

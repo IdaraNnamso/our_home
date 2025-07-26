@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">OURHOME🐾</div>
+      <div className="logo">OURHOE🐾</div>
 
       <div className="hamburger" onClick={toggleMenu}>
         ☰

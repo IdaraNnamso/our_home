@@ -451,7 +451,7 @@ html, body {
 }
 
 .highlight-box {
-  background:#00aaff;
+  background:#000;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
@@ -467,11 +467,11 @@ html, body {
 .highlight-box h4 {
   margin-bottom: 10px;
   font-size: 1.3rem;
-  color: #fff; /* White */
+  color: #fff; 
 }
 
 .highlight-box p {
-  color: #e0e0e0; /* Light gray for body text */
+  color: #e0e0e0; 
 }
 
 

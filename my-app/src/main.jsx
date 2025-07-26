@@ -8,8 +8,9 @@ import Technology from './pages/Technology.jsx';
 import Electric from './pages/models/Electric.jsx';
 import Suv from './pages/models/Suv.jsx';
 import Sports from './pages/models/Sports.jsx';
-import './css/transitions.css';
 
+
+import './css/transitions.css';
 function AppRoutes() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
@@ -31,6 +32,8 @@ function AppRoutes() {
           />
         </div>
       ) : (
+
+        
         <div className="fade-wrapper">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />

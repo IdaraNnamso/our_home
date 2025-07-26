@@ -34,6 +34,7 @@
   padding: 8px 5px;
   transition: color 0.3s ease;
   position: relative;
+  margin-right: 36px;
 }
 
 .navbar2 a::after {

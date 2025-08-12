@@ -21,6 +21,24 @@ export default function Electric() {
       image: "https://www.thedrive.com/wp-content/uploads/2023/02/09/2022BMWi4M50_9.jpg?quality=85",
       description: "A performance-driven electric Gran Coupe with M DNA and zero emissions.",
       tag: "Electric",
+    },
+    {
+      name: "BMW i3",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKmuwmhhG7xe-acCw9YwDF_MbzFBj4W7FJgw&s",
+      description: "A compact city car with a unique futuristic design and sustainable materials. It was BMW’s first mass-produced electric car.",
+      tag: "Electric",
+    },
+    {
+      name: "BMW i3s",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh-A7EJmtpMw3-JUQ_7gsd8H02db6UKbSPRg&s",
+      description: "A sportier version of the i3 with more power and dynamic driving capabilities.",
+      tag: "Electric",
+    },
+    {
+      name: "BMW i4 eDrive40",
+      image: "https://www.thedrive.com/wp-content/uploads/2023/02/09/2022BMWi4M50_9.jpg?quality=85",
+      description: "An all-electric Gran Coupé blending sportiness and luxury with a range of up to 300+ miles.",
+      tag: "Electric",
     }
   ];
 

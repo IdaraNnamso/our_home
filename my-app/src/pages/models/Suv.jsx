@@ -37,7 +37,7 @@ export default function Suv() {
     playsInline
     className="promoVideo"
   >
-    <source src="https://www.bmw.com/video/is/content/BMW/bmwcom/bmw_com/category/innovation/futureoftech/fot-01-stage-hd.mp4" type="video/mp4" />
+    <source src="https://videos.pexels.com/video-files/8562464/8562464-hd_1920_1080_30fps.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
   <h2 className="heading">SUV BMW Models</h2>

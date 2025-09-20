@@ -3,7 +3,7 @@ import "../css/home.css";
 import Topnav from "../components/topnav";
 import { Link } from "react-router-dom";
 import FuzzyText from "../components/fuzzytext";
-import video from "../video/vid.mp4";
+import video from "../video/vid2.mp4";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
